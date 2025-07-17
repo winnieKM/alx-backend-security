@@ -1,0 +1,8 @@
+Django>=4.0,<5.0
+django-ratelimit==3.0.1
+celery==5.3.6
+redis==5.0.3
+django-redis==5.4.0
+maxminddb-geolite2==2018.703
+requests>=2.31
+mysqlclient>=2.2

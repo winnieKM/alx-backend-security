@@ -37,7 +37,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'ip_tracking'
+    'django.contrib.gis.geoip2',
+    'ip_tracking',
+    
 ]
 
 MIDDLEWARE = [
@@ -48,10 +50,15 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
-    
+
     'ip_tracking.middleware.IPLoggingMiddleware',
 
 ]
+
+import os
+
+GEOIP_PATH = os.path.join(BASE_DIR, 'geoip')
+
 
 ROOT_URLCONF = 'backend.urls'
 
@@ -72,6 +79,14 @@ TEMPLATES = [
 
 WSGI_APPLICATION = 'backend.wsgi.application'
 
+CACHES = {
+    "default": {
+        "BACKEND": "django.core.cache.backends.locmem.LocMemCache",
+        "LOCATION": "unique-ip-cache"
+    }
+}
+
+
 
 # Database
 # https://docs.djangoproject.com/en/5.2/ref/settings/#databases
@@ -80,6 +95,8 @@ DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
         'NAME': BASE_DIR / 'db.sqlite3',
+
+        'GEOIP_PATH': BASE_DIR / "geoip"
     }
 }
 

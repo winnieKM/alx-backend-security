@@ -51,8 +51,9 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'ip_tracking.middleware.IPLoggingMiddleware',
-    'ip_tracking.middleware.rate_limit_middleware.RateLimitMiddleware',
+    'ip_tracking.middleware.IPTrackingMiddleware',
+
+
 
 ]
 
@@ -155,6 +156,8 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/5.2/howto/static-files/
 
 STATIC_URL = 'static/'
+STATIC_ROOT = BASE_DIR / 'staticfiles'
+
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.2/ref/settings/#default-auto-field

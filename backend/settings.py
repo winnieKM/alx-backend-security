@@ -25,7 +25,7 @@ SECRET_KEY = 'django-insecure-uwo1^yic@vclc%n08(d)hrk#!xz&!fg!lzk-&pq9**1%ql4@vl
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = []
+ALLOWED_HOSTS = ['winniekm.pythonanywhere.com', '127.0.0.1', 'localhost']
 
 
 # Application definition
@@ -138,6 +138,10 @@ AUTH_PASSWORD_VALIDATORS = [
         'NAME': 'django.contrib.auth.password_validation.NumericPasswordValidator',
     },
 ]
+
+# Celery configuration
+CELERY_BROKER_URL = 'amqps://qqefvrzn:J371o7aLj4A_KCNnuUVSWE6bJMcGwT25@seal.lmq.cloudamqp.com/qqefvrzn'
+CELERY_RESULT_BACKEND = 'rpc://'
 
 
 # Internationalization

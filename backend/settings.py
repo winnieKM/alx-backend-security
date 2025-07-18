@@ -140,7 +140,8 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Celery configuration
-CELERY_BROKER_URL = 'amqps://qqefvrzn:J371o7aLj4A_KCNnuUVSWE6bJMcGwT25@seal.lmq.cloudamqp.com/qqefvrzn'
+CELERY_BROKER_URL = 'amqps://qqefvrzn:YOUR_PASSWORD@seal.lmq.cloudamqp.com:443/qqefvrzn'
+
 CELERY_RESULT_BACKEND = 'rpc://'
 
 

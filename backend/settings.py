@@ -32,6 +32,8 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'django.contrib.gis.geoip2',
     'ip_tracking',
+    'rest_framework',
+    'drf_yasg',
 ]
 
 MIDDLEWARE = [

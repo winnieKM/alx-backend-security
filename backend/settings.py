@@ -140,9 +140,9 @@ AUTH_PASSWORD_VALIDATORS = [
 ]
 
 # Celery configuration
-# Celery Configuration
-CELERY_BROKER_URL = "rediss://:<v0vyVz4JIi8rzSDUKIM7SoeDMPPo0N3n>@redis-16603.c8.us-east-1-3.ec2.redns.redis-cloud.com:16603/0?ssl_cert_reqs=CERT_NONE"
-CELERY_RESULT_BACKEND = CELERY_BROKER_URL
+
+CELERY_BROKER_URL = 'amqps://qqefvrzn:<your_password>@seal.lmq.cloudamqp.com/qqefvrzn'
+CELERY_RESULT_BACKEND = 'rpc://'
 
 
 # Internationalization
